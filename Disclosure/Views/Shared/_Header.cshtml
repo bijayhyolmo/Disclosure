@@ -1,0 +1,29 @@
+﻿<header id="header" class="navbar-fixed-top">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 hidden-xs logo">
+        <a href="@Url.Action("Index", "Home")">
+          <img src="@Url.Content("~/Content/assets/img/clerk-logo-web.svg")" title="Office of the Clerk, U.S. House of Representatives" alt="Office of the Clerk, U.S. House of Representatives" />
+        </a>
+      </div>
+      <div class="hidden-xs col-sm-6">
+        <div class="header-search-grp">
+          <ul class="inline-list" style="padding-right: 5px">
+            <li><a href="http://clerk.house.gov" target="_blank">Current Site</a></li>
+            <li style="margin-left: 5px">|</li>
+          </ul>
+          <div class="version-bar">
+            <div class="version-bar__text">Version</div>
+            <div class="version-bar__version">Alpha</div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="search-container"></div>
+
+  @Html.Partial("_Navigation")
+
+</header>

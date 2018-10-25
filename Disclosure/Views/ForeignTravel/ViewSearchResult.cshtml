@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Disclosure.Models.ViewForeignTravelReports.TravelReport>
+<br />
+<p>The following reports are available in text or pdf format for @ViewBag.Quarter, @ViewBag.Year:</p>
+<ul>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var result in Model)
+        {
+    <li>@result.Date  &nbsp;&nbsp;&nbsp; <a href="@result.PDFPath"><i class="fa fa-file"></i></a>&nbsp;<a href="@result.TXTPath"><i class="fa fa-file"></i></a></li>
+        }
+    } else
+    {
+        <li>No files</li>
+    }
+</ul>

@@ -1,0 +1,38 @@
+﻿@model Disclosure.Models.ViewForeignTravelReports.Filter
+
+@using (Html.BeginForm("ViewSearchResult", "ForeignTravel", FormMethod.Post, new { @class = "search-filter" }))
+{
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group library-form_group">
+                <label for="formGroupInput" class="library-form_label">Select a Year</label>
+                @Html.DropDownListFor(x => x.Year, (SelectList)ViewBag.Years, htmlAttributes: new { @class = "form-control library-form_control library-form_select" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <div class="form-group library-form_group">
+                <label for="formGroupInput" class="library-form_label">Select a Quarter</label>
+                @Html.DropDownListFor(x => x.Quarter, (SelectList)ViewBag.Quarters, htmlAttributes: new { @class = "form-control library-form_control library-form_select" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group library-form_group">
+        <div class="col-md-4 col-sm-4">
+            <button aria-label="search button" class="btn btn-library col-xs-12 search-btn" type="submit">Search</button>
+        </div>
+    </div>
+}
+<script>
+    $(function () {
+        $("form").on('submit', function (e) {
+            $.post($(this).attr("action"),
+                $(this).serialize(),
+                function (data) {
+                    $("#search-result").html(data);
+                });
+            e.preventDefault();
+        });
+    });
+</script>

@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+@model Disclosure.Models.ViewPostEmploymentNotification
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="library-h1" tabindex="0">PUBLIC DISCLOSURE</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h2>Post Employment Database</h2>
+        <hr />
+    </div>
+</div>
+
+@using (Html.BeginForm("ViewSearchResult", "GiftTravelFilings", FormMethod.Post, new { @class = "search-filter" }))
+{
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group library-form_group">
+                <label for="formGroupInput" class="library-form_label">EMPLOYEE LAST NAME</label>
+                @Html.TextBoxFor(x => x.Filters.EmployeeLastName, new { @class = "form-control library-form_control" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <label for="formGroupInput" class="library-form_label">TERMINATION DATES</label>
+            </div>
+            <div class="form-group library-form_group">
+                <div class="input-append input-group">
+                    <span class="input-group-addon" id="basic-addon1" style="background: none; border: none; min-width:75px">From</span>
+                    <input aria-label="votes filter parameter date" name="DateFrom" value="@Model.Filters.TerminationDateFrom" class="datepicker form-control library-form_control" id="TerminationDateFrom" type="text" autocomplete="off" placeholder="mm/dd/yyyy" />
+                    <label for="TerminationDateFrom" class="datepicker-addon add-on input-group-addon"><i class="fa fa-calendar"></i></label>
+                </div>
+                <div class="input-append input-group">
+                    <span class="input-group-addon" id="basic-addon2" style="background: none; border: none; min-width:75px">To</span>
+                    <input aria-label="votes filter parameter date" name="DateTo" value="@Model.Filters.TerminationDateTo" class="datepicker form-control library-form_control" id="TerminationDateTo" type="text" autocomplete="off" placeholder="mm/dd/yyyy" />
+                    <label for="TerminationDateTo" class="datepicker-addon add-on input-group-addon"><i class="fa fa-calendar"></i></label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group library-form_group">
+                <label for="formGroupInput" class="library-form_label">EMPLOYING OFFICE</label>
+                @Html.TextBoxFor(x => x.Filters.EmployingOffice, new { @class = "form-control library-form_control" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group library-form_group">
+        <div class="col-md-4 col-sm-4">
+            <button aria-label="search button" class="btn btn-library col-xs-12 search-btn" type="submit">Search</button>
+        </div>
+        <div class="col-md-4 col-sm-4">
+            <button aria-label="clear button" class="btn btn-library col-xs-12" type="button">Clear</button>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="search-result"></div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#TerminationDateFrom").datepicker();
+        $("#TerminationDateTo").datepicker();
+        $("form").on('submit', function (e) {
+            $.post($(this).attr("action"),
+                $(this).serialize(),
+                function (data) {
+                    $("#search-result").html(data);
+                });
+            e.preventDefault();
+        });
+    });
+</script>

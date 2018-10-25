@@ -1,0 +1,50 @@
+﻿@model Disclosure.Models.ViewPostEmploymentNotification
+<section class="content" id="accordion" role="tablist" aria-multiselectable="true">
+    <h1 class="library-h1">
+        POST-EMPLOYMENT NOTIFICATIONS
+    </h1>
+    <div class="panel library-panel" id="overview">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>What are Post-Employment Notifications?</h2>
+                <hr />
+                <p>
+                    Section 103 of the Honest Leadership and Open Government Act of 2007 requires the Office of the Clerk to notify departing Members, Delegates, Resident Commissioner, Officers, and certain covered House employees of the beginning and ending dates of statutory post-employment restrictions on lobbying and other activities.<br />
+
+                    The Committee on Ethics provides guidance regarding post-employment and related restrictions to all departing House Officers, Members, Delegates, Resident Commissioners, and employees who meet the criteria outlined in Section 103 of the Honest Leadership and Open Government Act of 2007.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="panel library-panel" id="download">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>DOWNLOAD POST-EMPLOYMENT NOTIFICATIONS</h2>
+                @if (Model != null && Model.Reports.Any())
+                {
+                    <a href=""><i class="fa fa-star"></i>&nbsp;All Years&nbsp; &nbsp;&nbsp;</a>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="panel library-panel" id="obtain-document">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>OBTAIN DOCUMENTS</h2>
+                <hr />
+                <p>If you have any questions or need assistance regarding the disclosure of post-employment notifications, please contact:</p>
+                @if (Model != null && Model.Source != null)
+                {
+                    <address>
+                        <strong>@Model.Source.Name</strong><br />
+                        @Model.Source.Address<br />
+                        @Model.Source.City<br />
+                        @Model.Source.Phone<br />
+                        @Model.Source.OfficeHours<br />
+                    </address>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+

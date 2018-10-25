@@ -1,0 +1,48 @@
+﻿@model Disclosure.Models.ViewForeignTravelReports
+<section class="content" id="accordion" role="tablist" aria-multiselectable="true">
+    <h1 class="library-h1">
+        FOREIGN TRAVEL REPORTS
+    </h1>
+    <div class="panel library-panel" id="overview">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>What are Foreign Travel Reports?</h2>
+                <hr />
+                <p>
+                    Reports of certain expenditures for all official foreign travel by Members and staff of the U.S. House of Representatives are filed in accordance with the Mutual Security Act of 1954 (Title 22 U.S. Code, Chapter 24, Section 1754) and the International Security Assistance Act of 1978.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="panel library-panel" id="electronic-reports">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Electronic Files of Foreign Travel Reports</h2>
+                <p>Reports from 1994 through the current quarter are printed in the Congressional Record.</p>
+                <div id="search-result">
+                    @Html.Partial("Filter", Model.Filters)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel library-panel" id="obtain-document">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>OBTAIN DOCUMENTS</h2>
+                <hr />
+                <p>Public disclosure documents filed with the Clerk are available from:</p>
+                @if (Model != null && Model.Source != null)
+                {
+                    <address>
+                        <strong>@Model.Source.Name</strong><br />
+                        @Model.Source.Address<br />
+                        @Model.Source.City<br />
+                        @Model.Source.Phone<br />
+                        @Model.Source.OfficeHours<br />
+                    </address>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,48 @@
+﻿@model Disclosure.Models.ViewOfficeOfCongressionalEthics
+<section class="content" id="accordion" role="tablist" aria-multiselectable="true">
+    <h1 class="library-h1">
+        OFFICE OF CONGRESSIONAL ETHICS
+    </h1>
+    <div class="panel library-panel" id="overview">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Agreement not to be a Congressional Candidate</h2>
+                <hr />
+                <p>
+                    Pursuant to section 4(d) of H.Res. 5, 114th Congress, and section 1(k)(2) of H.Res. 895, 110th Congress, the following members of the board and staff of the Office of Congressional Ethics have individually signed an agreement not to be a candidate for the office of Senator or Representative in, or Delegate or Resident Commissioner to, the Congress for purposes of the Federal Election Campaign Act of 1971 until at least 3 years after the individual is no longer a member of the board or staff of the Office of Congressional Ethics:
+                </p>
+                @if (Model!=null && Model.Candidates.Any()) {
+                    foreach(var group in Model.Candidates.GroupBy(x=>x.Type))
+                    {
+                        <p>@group.Key</p>
+                        <ul>
+                            @foreach (var member in group)
+                            {
+                                <li>@member.Name</li>
+                            }
+                        </ul>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <div class="panel library-panel" id="obtain-document">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>FOR MORE INFORMATION</h2>
+                <hr />
+                @if (Model != null && Model.Source != null)
+                {
+                    <address>
+                        <strong>@Model.Source.Name</strong><br />
+                        @Model.Source.Address<br />
+                        @Model.Source.City<br />
+                        @Model.Source.Phone<br />
+                        @Model.Source.OfficeHours<br />
+                    </address>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+

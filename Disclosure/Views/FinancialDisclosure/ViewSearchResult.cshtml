@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Disclosure.Models.ViewFinancialDisclosureReports.FinancialDisclosureData>
+<h2>
+    Search Results
+</h2>
+<table class="library-table table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Office
+            </th>
+            <th>
+                Filing Year
+            </th>
+            <th>Filing</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var result in Model)
+            {
+                <tr>
+                    <td>@result.Name</td>
+                    <td>@result.Office</td>
+                    <td>@result.Year</td>
+                    <td>@result.Filing</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr><td colspan="4">No Data</td></tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="always">
+    <title>Office of the Clerk, U.S. House of Representatives</title>
+
+    @Styles.Render("~/Content/custom")
+    <script>(function (H) { H.className = H.className.replace(/\bno-js\b/, 'js') })(document.documentElement)</script>
+
+    @{ var version = "?v=" + Guid.NewGuid().ToString().ToLower(); }
+    <script src="//amp.azure.net/libs/amp/2.1.5/azuremediaplayer.min.js"></script>
+    <script src="@Url.Content("~/Content/assets/vendor/jwplayer-7.11.0/jwplayer.js")"></script>
+    <script>
+        jwplayer.key = "xiyM/sO0FwaOMQwEomWBbgydaHPXEze/TyjCp9ZQcdU194La";
+    </script>
+    <script src="@Url.Content("~/Scripts/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap-tabcollapse.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/list.js")"></script>
+    <script src="@Url.Content("~/Scripts/list.pagination.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/placeholders.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/library.js")"></script>
+    <script src="@Url.Content("~/Scripts/site.js")"></script>
+    <script src="@Url.Content("~/Scripts/scroller.js")"></script>
+    @RenderSection("Scripts", required: false)
+</head>
+<body id="homepage" class="in-session">
+
+    <div class="survey survey--hidden">
+        <a href="https://www.surveymonkey.com/r/Clerk_site" target="_blank" title="Feedback">
+            <div class="survey__tab">Feedback</div>
+        </a>
+    </div>
+
+    @Html.Partial("_Header")
+
+    @RenderBody()
+
+    @Html.Partial("_Footer")
+
+    <script>
+        if (navigator.userAgent.indexOf(".NET") > -1) { // Check if the browser is IE
+            var mega = $('.dropdown-menu.mega-menu');
+
+            $(window).resize(function () {
+                adjustMegaMenus();
+            });
+
+            adjustMegaMenus();
+
+            function adjustMegaMenus() {
+                if ($(window).width() < 768) {
+                    mega.css({
+                        "width": "100%",
+                        "min-width": "0px",
+                        "left": "0",
+                        "transform": "translateX(0%)"
+                    });
+                } else {
+                    mega.css({
+                        "width": "85%",
+                        "min-width": "0px",
+                        "left": "50%",
+                        "transform": "translateX(-50%)"
+                    });
+                }
+            }
+        }
+    </script>
+
+    <div id='scrollUp' onclick='scrollToTop()'>
+        <i class='fa fa-chevron-up'></i>
+    </div>
+
+    <script>
+        var scrollToTop = function () {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 'slow')
+        }
+
+        $(document).scroll(function () {
+            if ($(window).scrollTop() >= 200) {
+                $('#scrollUp').fadeIn();
+            }
+            else {
+                $('#scrollUp').fadeOut();
+            }
+        })
+
+        var scrollToElement = function (elementId) {
+            $('html, body').animate({
+                scrollTop: $(elementId).offset().top - 120 + 'px'
+            }, 'fast');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿@model Disclosure.Models.ViewFrankedMaterials
+<section class="content" id="accordion" role="tablist" aria-multiselectable="true">
+    <h1 class="library-h1">
+        FRANKED MATERIALS
+    </h1>
+    <div class="panel library-panel" id="overview">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>What Are Franked Materials?</h2>
+                <hr />
+                <p>
+                    For mass mailings to their Congressional district, Members may use their signature, or frank, instead of a postage stamp. The term mass mailing is defined as follows: “with respect to a session of Congress, a mailing of newsletters or other pieces of mail with substantially identical content (whether such pieces of mail are deposited singly or in bulk, or at the same time or different times), totaling more than 500 pieces of mail in that session…” –Rule XXIV of the Rules of the U.S. House of Representatives<br/>
+
+                    In accordance with House Rule 24, Members must submit a sample or a description of the contents of mass mailings to the House Commission on Congressional Mailing Standards and obtain the approval of the commission before the mass mailing can be sent. Copies of materials approved by and filed with this Commission are available.<br/>
+
+                    Individuals requesting access to these records must fill out a form, which will be retained. Materials from January 1996 to the present, including advisory opinions, are available for viewing and photocopying.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="panel library-panel" id="obtain-document">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>OBTAIN DOCUMENTS</h2>
+                <hr />
+                <p>Public disclosure documents filed with the Clerk are available from:</p>
+                @if (Model != null && Model.Source != null)
+                {
+                    <address>
+                        <strong>@Model.Source.Name</strong><br />
+                        @Model.Source.Address<br />
+                        @Model.Source.City<br />
+                        @Model.Source.Phone<br />
+                        @Model.Source.OfficeHours<br />
+                    </address>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+

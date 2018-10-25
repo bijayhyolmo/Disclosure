@@ -1,0 +1,21 @@
+﻿@using Clerk.LCS.Services.Extensions
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron not_in_session">
+    <div class="container">
+        <div id="feature">
+            <div class="col-xs-12">
+                <p><span class="session-id hidden-xs"></span></p>
+                <h1>
+                    <span class="date" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);">
+                        An error has occurred. Please try again later.
+                    </span>
+                </h1>
+                <span class="date" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);">@DateTime.UtcNow.ToEasternStandardTime().ToString("MMMM d, yyyy h:mm:ss tt")</span>
+            </div>
+        </div>
+    </div>
+</div>

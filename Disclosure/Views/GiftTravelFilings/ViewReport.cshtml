@@ -1,0 +1,54 @@
+﻿
+@model Disclosure.Models.ViewGiftTravelFilings
+<section class="content" id="accordion" role="tablist" aria-multiselectable="true">
+    <h1 class="library-h1">
+        GIFT TRAVEL FILINGS
+    </h1>
+    <div class="panel library-panel" id="overview">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>What are Gift Travel Filings?</h2>
+                <hr />
+                <p>
+                    In accordance with House Rule 25 of the 115th Congress, Members, officers, and staff must file reports which detail travel-related expenses reimbursed by non-government sources and charitable contributions made in lieu of honoraria (a payment for services that do not have a set fee).<br />
+
+                    Section 304 of the Honest Leadership and Open Government Act of 2007 requires the Office of the Clerk to make travel disclosure reports received during the past six years available to the public on the internet.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="panel library-panel" id="download">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>DOWNLOAD TRAVEL REPORTS BY YEAR</h2>
+                @if (Model != null && Model.Reports.Any())
+                {
+                    foreach (var report in Model.Reports)
+                    {
+                        <a href="@report.FilePath"><i class="fa fa-star"></i>&nbsp;@report.Year&nbsp; &nbsp;&nbsp;</a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <div class="panel library-panel" id="obtain-document">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>OBTAIN DOCUMENTS</h2>
+                <hr />
+                <p>Public disclosure documents filed with the Clerk are available from:</p>
+                @if (Model != null && Model.Source != null)
+                {
+                    <address>
+                        <strong>@Model.Source.Name</strong><br />
+                        @Model.Source.Address<br />
+                        @Model.Source.City<br />
+                        @Model.Source.Phone<br />
+                        @Model.Source.OfficeHours<br />
+                    </address>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+

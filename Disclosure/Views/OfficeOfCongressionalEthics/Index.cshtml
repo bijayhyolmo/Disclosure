@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "OfficeOfCongressionalEthics";
+}
+
+<div class="session-id-mobile visible-xs">
+    <ul>
+        <li><svg role="img" aria-label="Yellow Star" xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="8.5 -3.9 19 17.8"><polygon points="27.5 3 20.3 3 18.1 -3.9 15.8 3 8.5 3 14.4 7.1 12.2 13.9 18 9.7 23.9 13.9 21.7 7.1 " fill="#FFD262" /></svg></li>
+        <li><svg role="img" aria-label="Yellow Star" xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="8.5 -3.9 19 17.8"><polygon points="27.5 3 20.3 3 18.1 -3.9 15.8 3 8.5 3 14.4 7.1 12.2 13.9 18 9.7 23.9 13.9 21.7 7.1 " fill="#FFD262" /></svg></li>
+    </ul>
+</div>
+
+<section id="main-content" class="main-view container double-column about" data-main="about">
+    <div class="row equalheights">
+        <div class="col-xs-12 col-sm-12 col-md-3 left-nav left-nav-group">
+            <ul class="nav nav-pills nav-stacked" data-load-views="true" role="tablist">
+                <li><h2 class="library-h2">Reports</h2></li>
+                <li role="tab" class="active">
+                    <a class="init" href="#Report" data-custom-nav="sidenav" data-view="ViewReport" aria-controls="What are Financial Disclosure Reports" data-toggle="pill" tabindex="0">Overview</a>
+                </li>
+                <li role="tab">
+                    <a class="init" href="#obtain-document" data-alternative="ViewReport" data-view="ViewDocument" data-custom-nav="sidenav" aria-controls="Obtain Document" data-toggle="pill" tabindex="0">FOR MORE INFORMATION</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content col-xs-12 col-sm-8 col-md-9">
+            <div role="tabpanel" class="tab-pane library-tab_pane active" id="Report" tabindex="0">
+            </div>
+        </div>
+    </div>
+
+</section>
+<script>
+    var MyAppUrlSettings = {
+        ViewReport: '@Url.Action("ViewReport", "OfficeOfCongressionalEthics")'
+    };
+    document.title = 'Office of the Clerk, U.S. House of Representatives - Office Of Congressional Candidate';
+</script>
+

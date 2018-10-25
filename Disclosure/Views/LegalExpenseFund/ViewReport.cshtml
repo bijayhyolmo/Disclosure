@@ -1,0 +1,39 @@
+﻿@model Disclosure.Models.ViewLegalExpenseFund
+<section class="content" id="accordion" role="tablist" aria-multiselectable="true">
+    <h1 class="library-h1">
+        LEGAL EXPENSE FUND DISCLOSURES
+    </h1>
+    <div class="panel library-panel" id="overview">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>What are Legal Expense Funds?</h2>
+                <hr />
+                <p>
+                    Legal expense funds are established to assist Members when: “the legal expenses arise in connection with: the individual's candidacy for or election to federal office; the individual's official duties or position in Congress (including legal expenses incurred in connection with an amicus brief file in a Member's official capacity, a civil action by a Member challenging the validity of a law or federal regulation, or a matter before the Committee on Standards of Official Conduct); a criminal prosecution; or a civil matter bearing on the individual's reputation or fitness for office.” –Memorandum to Members from the House Committee on Standards of Official Conduct, June 10, 1996<br />
+
+                    A legal expense fund is set up as a trust and is administered by an independent trustee who oversees fund­raising. Trust funds and quarterly reports of trust funds approved by the Committee on Ethics are filed with the Clerk one week after approval by the committee, for the current Congress and the previous two Congresses.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="panel library-panel" id="obtain-document">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>OBTAIN DOCUMENTS</h2>
+                <hr />
+                <p>Public disclosure documents filed with the Clerk are available from:</p>
+                @if (Model != null && Model.Source != null)
+                {
+                    <address>
+                        <strong>@Model.Source.Name</strong><br />
+                        @Model.Source.Address<br />
+                        @Model.Source.City<br />
+                        @Model.Source.Phone<br />
+                        @Model.Source.OfficeHours<br />
+                    </address>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+

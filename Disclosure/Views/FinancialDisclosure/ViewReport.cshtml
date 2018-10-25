@@ -1,0 +1,90 @@
+﻿@model Disclosure.Models.ViewFinancialDisclosureReports
+<section class="content" id="accordion" role="tablist" aria-multiselectable="true">
+    <h1 class="library-h1">
+        FINANCIAL DISCLOSURE REPORTS
+    </h1>
+    <div class="panel library-panel" id="overview">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>What are Financial Disclosure Reports?</h2>
+                <hr />
+                <p>
+                    Financial Disclosure Reports include information about the source, type, amount, or value of the incomes of Members, officers, certain employees of the U.S. House of Representatives and related offices, and candidates for the U.S. House of Representatives.<br />
+                    These reports are filed with the Clerk of the House as required by Title I of the Ethics in Government Act of 1978, as amended. 5 U.S.C. app. § 101 et seq.<br />
+
+                    Section 8 of the STOCK Act of 2012, as amended, requires the Clerk of the House of Representatives to provide online public access to financial disclosure reports filed by Members of Congress and candidates for Congress.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="panel library-panel" id="download">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>DOWNLOAD TRAVEL REPORTS BY YEAR</h2>
+                @if (Model != null && Model.Reports.Any())
+                {
+                    foreach (var report in Model.Reports)
+                    {
+                        <a href="@report.FilePath"><i class="fa fa-star"></i>&nbsp;@report.Year&nbsp; &nbsp;&nbsp;</a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+    <div class="panel library-panel" id="member-staff">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>For Members and Staff</h2>
+                <hr />
+                <p>Obtain instruction booklet, forms and instructions for filing:</p>
+                <ul>
+                    @if (Model != null && Model.ResourcesForStaff.Any())
+                    {
+                        foreach (var resource in Model.ResourcesForStaff)
+                        {
+                            <li><a href="@resource.Link">@resource.Text</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="panel library-panel" id="congressional-candidates">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>For Congressional Candidates</h2>
+                <hr />
+                <p>Obtain instruction booklet, forms for filing:</p>
+                <ul>
+                    @if (Model != null && Model.ResourcesForCandidates.Any())
+                    {
+                        foreach (var resource in Model.ResourcesForCandidates)
+                        {
+                            <li><a href="@resource.Link">@resource.Text</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="panel library-panel" id="obtain-document">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>OBTAIN DOCUMENTS</h2>
+                <hr />
+                <p>Public disclosure documents filed with the Clerk are available from:</p>
+                @if (Model != null && Model.Source != null)
+                {
+                    <address>
+                        <strong>@Model.Source.Name</strong><br />
+                        @Model.Source.Address<br />
+                        @Model.Source.City<br />
+                        @Model.Source.Phone<br />
+                        @Model.Source.OfficeHours<br />
+                    </address>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+

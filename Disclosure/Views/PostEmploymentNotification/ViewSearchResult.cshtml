@@ -1,0 +1,39 @@
+﻿
+@model IEnumerable<Disclosure.Models.ViewPostEmploymentNotification.PostEmploymentData>
+<h2>
+    Search Results
+</h2>
+<table class="library-table table">
+    <thead>
+        <tr>
+            <th>
+               Employee Name
+            </th>
+            <th>
+                Employing Office
+            </th>
+            <th>
+                Termination Date
+            </th>
+            <th>Lobbying Eligibility Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var result in Model)
+            {
+                <tr>
+                    <td>@result.EmployeeName</td>
+                    <td>@result.EmployingOffice</td>
+                    <td>@result.TerminationDate</td>
+                    <td>@result.LobbyingEligibilityDate</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr><td colspan="4">No Data</td></tr>
+        }
+    </tbody>
+</table>

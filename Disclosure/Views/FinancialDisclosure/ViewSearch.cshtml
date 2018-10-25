@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+}
+@model Disclosure.Models.ViewFinancialDisclosureReports
+<div class="row">
+    <div class="col-md-12">
+        <h1 class="library-h1" tabindex="0">FINANCIAL DISCLOSURE REPORTS</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h2>Financial Disclosure Reports Database</h2>
+        <hr />
+        <p>
+            It is unlawful to use the information contained in these Financial Disclosure Statements for (A) any unlawful purpose, (B) any commercial purpose, other than by news and communications media for dissemination to the general public, (C) determining or establishing the credit rating of any individual, or (D) use, directly or indirectly, in the solicitation of money for any political, charitable, or other purpose. See 5 U.S.C. app. § 105(c)(1),(2).
+
+            In conformity with 2 U.S.C. § 104e(b)(3), certain personally identifiable information in these reports, not required to be disclosed, has been redacted.
+        </p>
+    </div>
+</div>
+
+<div id="search-content" class="container sub-nav_home">
+    <div class="row">
+        <div class="lcs-tabs">
+            <div class="sub-nav">
+                <ul id="section-tabs" class="nav nav-tabs library-nav_tabs sub-nav_list" data-load-views="true" role="tablist">
+                    <li role="tab" class="active">
+                        <a href="#search-members" data-toggle="tab" class="init" tabindex="0">
+                            <span class="nowrap">Search Members</span>
+                        </a>
+                    </li>
+                    <li role="tab">
+                        <a href="#search-candidates" data-toggle="tab" tabindex="0">
+                            <span class="nowrap">Search Candidates</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container tab-content" aria-live="polite">
+            <div role="tabpanel" class="tab-pane library-tab_pane active" id="search-members" tabindex="0" aria-labelledby="home-tab1">
+                @Html.Partial("Filter", Model.MemberFilter)
+            </div>
+            <div role="tabpanel" class="tab-pane library-tab_pane" id="search-candidates" tabindex="0" aria-labelledby="home-tab2">
+                @Html.Partial("Filter", Model.CandidateFilter)
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <div id="search-result"></div>
+    </div>
+</div>
+<style>
+    #search-content .lcs-tabs {
+        padding-left: 0;
+    }
+
+    #search-content .nav-tabs a {
+        border: gray solid 1px;
+    }
+
+    #search-content .tab-content {
+        border: 1px gray solid;
+    }
+</style>

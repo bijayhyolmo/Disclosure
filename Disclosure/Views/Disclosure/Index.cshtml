@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Public Disclosure";
+}
+
+<div class="container">
+    <div id="page-content">
+        <div id="legislative-main-content">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="top-section">
+                        <h1 class="library-h1" role="banner" tabindex="0">PUBLIC DISCLOSURE</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>What is Public Disclosure?</h2>
+                    <hr />
+                    <p>
+                        Members, officers, and staff of the U.S. House of Representatives are required by certain House Rules and federal statutes to file official documents on travel, income, gifts, etc. and to make this information available to the public as Public Disclosure documents. These documents are filed with the Clerk of the House and are available from the Legislative Resource Center, 135 Cannon House Office Building, during normal office hours. The telephone number is (202) 226-5200. For information about documents or materials available for public inspection, please select a topic from the following list:
+                    </p>
+                </div>
+            </div>
+            <section for="ReportsAndFilings">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>Reports and Filings</h2>
+                        <hr />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.ActionLink("Financial Disclosure Forms and Reports", "Index","FinancialDisclosure")
+                        <p>Financial Disclosure Reports include information about the source, type, amount, or value of the incomes of Members, officers, certain employees of the U.S. House of Representatives and related offices, and candidates for the U.S. House of Representatives.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.ActionLink("Foreign Travel Reports and Expenditures","Index", "ForeignTravel")
+                        <p>Reports of certain expenditures for all official foreign travel by Members and staff of the U.S. House of Representatives.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.ActionLink("Franked Materials (Mass Mailings)", "Index","FrankedMaterials")
+                        <p>Information on the contents of mass mailings distributed by Members of the U.S. House of Representatives to their respective Congressional Districts.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.ActionLink("Gift Travel Filings","Index","GiftTravelFilings")
+                        <p>Reports on travel-related expenses incurred by Members of the U.S. House of Representatives who are reimbursed by non­government sources and charitable contributions made in lieu of honoraria (a payment for services that does not have a set fee).</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.ActionLink("Legal Expense Fund Disclosures", "Index", "LegalExpenseFund")
+                        <p>Reports on any legal expenses incurred by a candidate or Member of the U.S. House of Representatives.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.ActionLink("Office of Congressional Ethics", "Index", "OfficeOfCOngressionalEthics")
+                        <p>View the names of the board members and staff of the Office of Congressional Ethics who have signed an agreement to not be a Congressional candidate until 3 years after their service as a board or staff member has ended.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.ActionLink("Post-Employment Notifications", "Index","PostEmploymentNotification")
+                        <p>Information concerning departing Members, Officers, and certain covered House employees previously notified regarding statutory post-employment restrictions on lobbying and other activities and the beginning and ending dates of those restrictions.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="https://www.cbo.gov/search/ce_sitesearch.cfm" target="_blank">
+                            Congressional Budget Office Cost Estimates
+                        </a>
+                        <p>View cost estimates prepared by the Congressional Budget Office.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.title = "Office of the Clerk, U.S. House of Representatives - Public Disclosure";
+</script>
+
